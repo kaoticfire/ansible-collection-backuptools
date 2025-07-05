@@ -6,8 +6,37 @@
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-okaidia.min.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+  <style>
+    body.dark-mode {
+        background-color: #121212;
+        color: #e0e0e0;
+    }
+    .toggle-btn {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        background: #f05030;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    </style>
+    <script>
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    }
+    window.onload = function() {
+        if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+        }
+    };
+    </script>
 </head>
 <body>
+    <button class="toggle-btn" onclick="toggleDarkMode()">🌗 Toggle Dark Mode</button>
   <div style="text-align: center;">
     <img src="assets/logo.svg" alt="Kaotic Fire Logo" width="150">
     <h1>Kaotic Fire: Backuptools</h1>
@@ -43,7 +72,9 @@
   </code></pre>
 
   <hr>
-
+    <p style="text-align: center;">
+      <a href="changelog.md">View Changelog</a>
+    </p>
   <p style="text-align: center;">
     🔥 Built with grit by Kaotic Fire — view on <a href="https://github.com/kaoticfire/ansible-collection-backuptools">GitHub</a>
   </p>
