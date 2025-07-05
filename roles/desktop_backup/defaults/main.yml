@@ -1,0 +1,10 @@
+desktop_backup_include:
+  - "{{ ansible_env.HOME }}/Documents"
+  - "{{ ansible_env.HOME }}/Pictures"
+
+desktop_backup_exclude:
+  - "**/node_modules"
+  - "**/.cache"
+
+desktop_backup_target: "{{ ansible_env.HOME }}/backups"
+desktop_backup_time: "03:00"

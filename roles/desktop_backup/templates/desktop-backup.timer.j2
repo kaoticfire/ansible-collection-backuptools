@@ -1,0 +1,9 @@
+[Unit]
+Description=Daily user backup timer
+
+[Timer]
+OnCalendar=*-*-* {{ desktop_backup_time }}
+Persistent=true
+
+[Install]
+WantedBy=timers.target

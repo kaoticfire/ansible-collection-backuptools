@@ -1,0 +1,11 @@
+galaxy_info:
+  author: Kaotic Fire
+  description: Backup selected desktop folders to compressed archives
+  license: MIT
+  min_ansible_version: 2.11
+  platforms:
+    - name: Ubuntu
+      versions: ["20.04", "22.04"]
+    - name: EL
+      versions: ["7", "8"]
+dependencies: []

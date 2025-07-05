@@ -1,0 +1,8 @@
+[Unit]
+Description=User data backup service
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/desktop-backup.sh

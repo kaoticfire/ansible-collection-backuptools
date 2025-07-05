@@ -1,0 +1,9 @@
+[Unit]
+Description=Run Docker backup daily
+
+[Timer]
+OnCalendar={{ docker_backup_oncalendar }}
+Persistent=true
+
+[Install]
+WantedBy=timers.target

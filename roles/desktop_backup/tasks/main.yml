@@ -1,0 +1,25 @@
+- name: Create backup script from template
+  template:
+    src: backup.sh.j2
+    dest: /usr/local/bin/desktop-backup.sh
+    mode: "0755"
+
+- name: Create desktop-backup systemd service
+  template:
+    src: desktop-backup.service.j2
+    dest: /etc/systemd/system/desktop-backup.service
+
+- name: Create desktop-backup systemd timer
+  template:
+    src: desktop-backup.timer.j2
+    dest: /etc/systemd/system/desktop-backup.timer
+
+- name: Reload systemd
+  systemd:
+    daemon_reload: true
+
+- name: Enable and start timer
+  systemd:
+    name: desktop-backup.timer
+    enabled: yes
+    state: started

@@ -1,0 +1,10 @@
+all: lint test
+
+lint:
+    ansible-lint roles/
+
+test:
+    molecule test
+
+package:
+    ansible-galaxy collection build

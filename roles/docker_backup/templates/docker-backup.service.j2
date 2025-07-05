@@ -1,0 +1,8 @@
+[Unit]
+Description=Backup running Docker containers
+Wants=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/docker-backup.sh

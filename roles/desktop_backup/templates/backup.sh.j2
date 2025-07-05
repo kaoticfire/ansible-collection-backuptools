@@ -1,0 +1,13 @@
+#!/bin/bash
+
+TARGET="{{ desktop_backup_target }}"
+INCLUDE={% for path in desktop_backup_include %}"{{ path }}" {% endfor %}
+EXCLUDE={% for rule in desktop_backup_exclude %}--exclude="{{ rule }}" {% endfor %}
+TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
+
+mkdir -p "$TARGET"
+cd "$HOME"
+
+echo "[*] Starting backup at $TIMESTAMP..."
+tar czf "$TARGET/desktop-backup-$TIMESTAMP.tar.gz" $EXCLUDE $INCLUDE
+echo "[*] Backup complete at: $TARGET/desktop-backup-$TIMESTAMP.tar.gz"

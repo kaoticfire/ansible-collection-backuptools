@@ -1,0 +1,25 @@
+- name: Copy docker backup script
+  copy:
+    src: docker-backup.sh
+    dest: /usr/local/bin/docker-backup.sh
+    mode: '0755'
+
+- name: Create docker-backup systemd service
+  template:
+    src: docker-backup.service.j2
+    dest: /etc/systemd/system/docker-backup.service
+
+- name: Create docker-backup systemd timer
+  template:
+    src: docker-backup.timer.j2
+    dest: /etc/systemd/system/docker-backup.timer
+
+- name: Reload systemd
+  systemd:
+    daemon_reload: true
+
+- name: Enable and start timer
+  systemd:
+    name: docker-backup.timer
+    enabled: yes
+    state: started

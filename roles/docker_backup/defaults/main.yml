@@ -1,0 +1,4 @@
+docker_backup_target: "/var/backups/docker"
+docker_backup_overlay: true
+docker_backup_json_log: true
+docker_backup_oncalendar: "daily"

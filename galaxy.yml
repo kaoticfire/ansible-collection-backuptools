@@ -1,0 +1,19 @@
+namespace: kaoticfire
+name: backuptools
+version: 1.0.0
+readme: README.md
+authors:
+  - Kaotic Fire <virgilhoover@gmail.com>
+license:
+  - MIT
+tags:
+  - backup
+  - docker
+  - systemd
+  - workstation
+  - automation
+dependencies: {}
+repository: https://github.com/kaoticfire/ansible-collection-backuptools
+documentation: https://kaoticfire.github.io/ansible-collection-backuptools
+homepage: https://kaoticfire.github.io/ansible-collection-backuptools
+issues: https://github.com/kaoticfire/ansible-collection-backuptools/issues
