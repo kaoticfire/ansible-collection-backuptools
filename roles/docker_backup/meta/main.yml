@@ -1,11 +1,9 @@
 galaxy_info:
   author: Kaotic Fire
-  description: Backup running Docker containers using systemd + tar
+  description: Backup running Docker containers
   license: MIT
   min_ansible_version: 2.11
   platforms:
-    - name: EL
-      versions: ["7", "8"]
     - name: Ubuntu
       versions: ["20.04", "22.04"]
 dependencies: []
